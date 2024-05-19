@@ -4,7 +4,7 @@ agent any
 stages
 {
  stage('scm checkout')
- {steps { git branch: 'master', url: 'https://github.com/prakashk0301/mavenproject' }} 
+ {steps { git branch: 'master', url: 'https://github.com/Onkar2515/mavenproject.git' }} 
 
 
  stage('execute unit test framework')
@@ -21,7 +21,7 @@ stages
 
  stage('deploy to tomcat-dev')
  {steps { sshagent(['tomcatdev']) 
-   { sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@13.229.199.182:/usr/share/tomcat/webapps/'}  
+   { sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@51.20.3.127:/usr/share/tomcat/webapps/'}  
  } }
 
 
